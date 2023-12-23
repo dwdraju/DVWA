@@ -98,9 +98,3 @@ deny[msg] {
     contains(lower(val), "sudo")
     msg = sprintf("Avoid using 'sudo' command: %s", [val])
 }
-
-# # No Healthcheck usage
-# deny[msg] {
-#     input[i].Cmd == "healthcheck"
-#     msg := "no healthcheck"
-# }

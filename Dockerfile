@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.licenses="gpl-3.0"
 WORKDIR /var/www/html
 
 # https://www.php.net/manual/en/image.installation.php
-RUN apt-get update \
+RUN apt-get update && apt-get upgrade \
  && export DEBIAN_FRONTEND=noninteractive \
  && apt-get install -y zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev iputils-ping \
  && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
