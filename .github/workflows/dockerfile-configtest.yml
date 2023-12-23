@@ -1,0 +1,14 @@
+name: Run OPA Configtest  
+on: [push]
+jobs:
+  OPA-Dockerfile:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+    - name: Setup Conftest
+      uses: princespaghetti/setup-conftest@v1
+
+    - name: Run Conftest 
+      run: conftest test Dockerfile
